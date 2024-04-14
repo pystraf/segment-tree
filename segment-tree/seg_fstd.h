@@ -6,9 +6,9 @@ private:
 		int l, r;
 		T lazy, sum1, sum2;
 	};
-	vector<node> tr;
+	std::vector<node> tr;
 public:
-	segment(vector<T> &a){
+	segment(std::vector<T> &a){
 		tr.resize(a.size() << 2);
 		build(1, 1, a.size(), a);
 	}
@@ -36,7 +36,7 @@ private:
 		}
 	}
 	
-	void build(int u, int l, int r, vector<T> &a){
+	void build(int u, int l, int r, std::vector<T> &a){
 		tr[u] = {l, r};
 		if(l == r){
 			tr[u].sum1 = a[l - 1];
