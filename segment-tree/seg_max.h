@@ -30,12 +30,12 @@ private:
     
     void build(int u, int l, int r, std::vector<T> &a){
         if (l == r){
-            tr[u] = {l, l, unity};
+            tr[u] = {l, l, a[l - 1]};
             return;
         }
         tr[u] = {l, r, unity};
         int mid = l + r >> 1;
-        build(u << 1, l, mid); build(u << 1 | 1, mid + 1, r);
+        build(u << 1, l, mid, a); build(u << 1 | 1, mid + 1, r, a);
         pushup(u);
     }
 
